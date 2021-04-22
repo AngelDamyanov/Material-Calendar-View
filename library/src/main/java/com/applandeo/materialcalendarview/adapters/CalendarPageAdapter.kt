@@ -68,8 +68,8 @@ class CalendarPageAdapter(
             informDatePicker()
             return
         }
-
-        calendarProperties.selectedDays.remove(selectedDay)
+//removed because when month has 31 days this is called and removes the day from selected days
+//        calendarProperties.selectedDays.remove(selectedDay)
         informDatePicker()
     }
 
