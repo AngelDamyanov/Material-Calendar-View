@@ -60,7 +60,8 @@ private fun getCalendarsBetweenDates(dateFrom: Date, dateTo: Date): List<Calenda
     val daysBetweenDates = TimeUnit.MILLISECONDS.toDays(
             calendarTo.timeInMillis - calendarFrom.timeInMillis)
 
-    if (calendarTo.get(Calendar.DAY_OF_MONTH) == 31) {
+//    if (calendarTo.get(Calendar.DAY_OF_MONTH) == 31) {
+    if (calendarTo.getActualMaximum(Calendar.DAY_OF_MONTH) == 31) {
         for (it in 1..daysBetweenDates) {
             val calendar = calendarFrom.clone() as Calendar
             calendars.add(calendar)

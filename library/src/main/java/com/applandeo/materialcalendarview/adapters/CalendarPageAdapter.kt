@@ -69,7 +69,8 @@ class CalendarPageAdapter(
             return
         }
 //removed because when month has 31 days this is called and removes the day from selected days
-//        calendarProperties.selectedDays.remove(selectedDay)
+        if (selectedDay.calendar.getActualMaximum(Calendar.DAY_OF_MONTH) != 31)
+            calendarProperties.selectedDays.remove(selectedDay)
         informDatePicker()
     }
 
